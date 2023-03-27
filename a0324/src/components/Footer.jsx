@@ -1,19 +1,6 @@
 import "../App.css";
 
 const Footer = () => {
-  const lists = [
-    {
-      title: "Features",
-      desc: [
-        "Cool stuff",
-        "Random feature",
-        "Team feature",
-        "Stuff for developers",
-        "Another one",
-        "Last time",
-      ],
-    },
-  ];
   return (
     <>
       <footer>
@@ -27,66 +14,48 @@ const Footer = () => {
             />
             <small className="text-muted">© 2017-2018</small>
           </div>
-          <div>
-            <h5>Features</h5>
-            <ul>
-              <li>
-                <a href="#">Cool stuff</a>
-              </li>
-              <li>
-                <a href="#">Random feature</a>
-              </li>
-              <li>
-                <a href="#">Team feature</a>
-              </li>
-              <li>
-                <a href="#">Stuff for developers</a>
-              </li>
-              <li>
-                <a href="#">Another one</a>
-              </li>
-              <li>
-                <a href="#">Last time</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h5>Resources</h5>
-            <ul>
-              <li>
-                <a href="#">Resource</a>
-              </li>
-              <li>
-                <a href="#">Resource name</a>
-              </li>
-              <li>
-                <a href="#">Another resource</a>
-              </li>
-              <li>
-                <a href="#">Final resource</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h5>About</h5>
-            <ul>
-              <li>
-                <a href="#">Team</a>
-              </li>
-              <li>
-                <a href="#">Locations</a>
-              </li>
-              <li>
-                <a href="#">Privacy</a>
-              </li>
-              <li>
-                <a href="#">Terms</a>
-              </li>
-            </ul>
-          </div>
+          <FooterElemnet
+            title="Features"
+            desc={[
+              "Cool stuff",
+              "Random feature",
+              "Team feature",
+              "Stuff for developers",
+              "Another one",
+              "Last time",
+            ]}
+          />
+          <FooterElemnet
+            title="Resources"
+            desc={[
+              "Resource",
+              "Resource name",
+              "Another resource",
+              "Final resource",
+            ]}
+          />
+          <FooterElemnet
+            title="About"
+            desc={["Team", "Locations", "Privacy", "Terms"]}
+          />
         </div>
       </footer>
     </>
+  );
+};
+
+const FooterElemnet = ({ title, desc }) => {
+  return (
+    <div>
+      <h5>{title}</h5>
+      <ul>
+        {desc.map((des) => (
+          <li>
+            <a href="#">{des}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
