@@ -1,6 +1,8 @@
 import "../App.css";
 
-const Card = ({ name, price, desc, btnDesc }) => {
+const Card = ({ name, price, desc, btnDesc, handleUserNum }) => {
+  const [userNum, storage, support] = desc;
+
   return (
     <>
       <div className="card">
@@ -13,12 +15,14 @@ const Card = ({ name, price, desc, btnDesc }) => {
             <small className="text_muted"> / mo</small>
           </h1>
           <ul>
-            <li>{desc[0]} users included</li>
-            <li>{desc[1]} GB of storage</li>
-            <li>{desc[2]} support</li>
+            <li>{userNum} users included</li>
+            <li>{storage} GB of storage</li>
+            <li>{support} support</li>
             <li>Help center access</li>
           </ul>
-          <button type="button">{btnDesc}</button>
+          <button name={name} onClick={handleUserNum} type="button">
+            {btnDesc}
+          </button>
         </div>
       </div>
     </>
