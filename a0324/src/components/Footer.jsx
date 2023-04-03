@@ -26,8 +26,9 @@ const Footer = () => {
     <>
       <footer className="footer">
         <div className="row">
-          <div>
+          <div className="box">
             <img
+              className="img"
               src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg"
               alt=""
               width="24"
@@ -36,12 +37,14 @@ const Footer = () => {
             <small className="text_muted">© 2017-2018</small>
           </div>
           {footerList.map((li, index) => (
-            <div key={`${li}_${index}`}>
-              <h5>{li.title}</h5>
-              <ul>
+            <div key={`${li}_${index}`} className="box">
+              <h5 className="h5">{li.title}</h5>
+              <ul className="ul">
                 {li.desc.map((des, index) => (
-                  <li key={`${des}_${index}`}>
-                    <a href="#">{des}</a>
+                  <li key={`${des}_${index}`} className="li">
+                    <a className="a" href="#">
+                      {des}
+                    </a>
                   </li>
                 ))}
               </ul>

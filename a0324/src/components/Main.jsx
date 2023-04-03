@@ -34,8 +34,8 @@ const Main = () => {
   return (
     <>
       <div className="main">
-        <h1>Pricing</h1>
-        <p>
+        <h1 className="h1">Pricing</h1>
+        <p className="p">
           Quickly build an effective pricing table for your potential customers
           with this Bootstrap example. It's built with default Bootstrap
           components and utilities with little customization.
