@@ -1,9 +1,30 @@
 import "../App.css";
 
 const Footer = () => {
+  const footerList = [
+    {
+      title: "Features",
+      desc: [
+        "Cool stuff",
+        "Random feature",
+        "Team feature",
+        "Stuff for developers",
+        "Another one",
+        "Last time",
+      ],
+    },
+    {
+      title: "Resources",
+      desc: ["Resource", "Resource name", "Another resource", "Final resource"],
+    },
+    {
+      title: "About",
+      desc: ["Team", "Locations", "Privacy", "Terms"],
+    },
+  ];
   return (
     <>
-      <footer>
+      <footer className="footer">
         <div className="row">
           <div>
             <img
@@ -12,50 +33,23 @@ const Footer = () => {
               width="24"
               height="24"
             />
-            <small className="text-muted">© 2017-2018</small>
+            <small className="text_muted">© 2017-2018</small>
           </div>
-          <FooterElemnet
-            title="Features"
-            desc={[
-              "Cool stuff",
-              "Random feature",
-              "Team feature",
-              "Stuff for developers",
-              "Another one",
-              "Last time",
-            ]}
-          />
-          <FooterElemnet
-            title="Resources"
-            desc={[
-              "Resource",
-              "Resource name",
-              "Another resource",
-              "Final resource",
-            ]}
-          />
-          <FooterElemnet
-            title="About"
-            desc={["Team", "Locations", "Privacy", "Terms"]}
-          />
+          {footerList.map((li, index) => (
+            <div key={`${li}_${index}`}>
+              <h5>{li.title}</h5>
+              <ul>
+                {li.desc.map((des, index) => (
+                  <li key={`${des}_${index}`}>
+                    <a href="#">{des}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </footer>
     </>
-  );
-};
-
-const FooterElemnet = ({ title, desc }) => {
-  return (
-    <div>
-      <h5>{title}</h5>
-      <ul>
-        {desc.map((des) => (
-          <li>
-            <a href="#">{des}</a>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 };
 

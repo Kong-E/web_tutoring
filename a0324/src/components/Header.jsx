@@ -3,9 +3,9 @@ import "../App.css";
 const Header = () => {
   return (
     <>
-      <header>
+      <header className="header">
         <h5>Company name</h5>
-        <nav>
+        <nav className="nav">
           <a href="#">Features</a>
           <a href="#">Enterprise</a>
           <a href="#">Support</a>

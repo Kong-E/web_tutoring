@@ -1,7 +1,28 @@
 import "../App.css";
 import Card from "./Card";
+import { useState } from "react";
 
 const Main = () => {
+  const cardList = [
+    {
+      name: "Free",
+      price: 0,
+      desc: [10, 2, "Email support"],
+      btnDesc: "Sign up for free",
+    },
+    {
+      name: "Pro",
+      price: 15,
+      desc: [20, 10, "Priority email"],
+      btnDesc: "Get started",
+    },
+    {
+      name: "Enterprise",
+      price: 30,
+      desc: [30, 15, "Phone and email"],
+      btnDesc: "Contact us",
+    },
+  ];
   return (
     <>
       <div className="main">
@@ -12,40 +33,10 @@ const Main = () => {
           components and utilities with little customization.
         </p>
       </div>
-      <div className="card-deck">
-        <Card
-          name="Free"
-          price="0"
-          desc={[
-            "10 users included",
-            "2 GB of storage",
-            "Email support",
-            "Help center access",
-          ]}
-          des="Sign up for free"
-        />
-        <Card
-          name="Pro"
-          price="15"
-          desc={[
-            "20 users included",
-            "10 GB of storage",
-            "Priority email support",
-            "Help center access",
-          ]}
-          des="Get started"
-        />
-        <Card
-          name="Enterprise"
-          price="29"
-          desc={[
-            "30 users included",
-            "15 GB of storage",
-            "Phone and email support",
-            "Help center access",
-          ]}
-          des="Contact us"
-        />
+      <div className="card_deck">
+        {cardList.map((card, index) => (
+          <Card key={`${card.name}_${index}`} {...card} />
+        ))}
       </div>
     </>
   );
