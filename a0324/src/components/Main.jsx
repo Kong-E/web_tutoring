@@ -32,11 +32,29 @@ const Main = () => {
 
   const handleuserNumber = (e) => {
     const find = e.target.name;
-    setuserNumber(
-      (prev) =>
-        (prev = { ...userNumber, [e.target.name]: userNumber[find] + 1 })
-    );
+    setuserNumber((prev) => ({
+      ...prev,
+      [e.target.name]: userNumber[find] + 1,
+    }));
   };
+
+  /*  price로 이런식으로 해보기
+      익명함수 주지 않고 nested func을 이용해서
+      onClick: onClick('Free')
+      not onClick: () => onClick('Free')
+    const onClick = (type) => {
+    if (type==='Free'){
+      setuserNumber((prev) => ({...prev, free: prev.free + 1}))
+      return
+    }
+    if (type==='Pro'){
+      setuserNumber((prev) => ({...prev, free: prev.Pro + 1}))
+      return
+    }
+    if (type==='Enterprise'){
+      setuserNumber((prev) => ({...prev, }))
+    }
+  } */
 
   return (
     <>
