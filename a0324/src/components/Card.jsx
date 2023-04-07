@@ -3,6 +3,13 @@ import "../App.css";
 const Card = ({ name, price, desc, btnDesc, handleUserNumber }) => {
   const [userNumber, storage, support] = desc;
 
+  const dataList = [
+    `${userNumber} users included`,
+    `${storage} GB of storage`,
+    `${support} support`,
+    "Help center access",
+  ];
+
   return (
     <>
       <div className="card">
@@ -15,10 +22,9 @@ const Card = ({ name, price, desc, btnDesc, handleUserNumber }) => {
             <small className="text_muted"> / mo</small>
           </h1>
           <ul className="ul">
-            <li className="li">{userNumber} users included</li>
-            <li className="li">{storage} GB of storage</li>
-            <li className="li">{support} support</li>
-            <li className="li">Help center access</li>
+            {dataList.map((data, index) => (
+              <li key={`data_item_${index}`}>{data}</li>
+            ))}
           </ul>
           <button
             className="button"
