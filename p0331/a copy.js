@@ -1,5 +1,5 @@
 // callback
-/* console.log("-------setTimeout-------");
+console.log("-------setTimeout-------");
 
 function a(b, c) {
   setTimeout(() => {
@@ -18,13 +18,12 @@ a(
   }
 );
 console.log("b");
-console.log("c"); */
+console.log("c");
 
 // promise
 
 // async await
-console.log("-----async await-----");
-
+/* console.log("-----async await-----");
 async function a(b, c) {
   await console.log("async a");
   b();
@@ -42,7 +41,7 @@ a(
 
 console.log("b");
 console.log("c");
-
+ */
 /* 
 // 일반 함수
 function a() {

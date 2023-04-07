@@ -156,7 +156,7 @@ body {
 .card_body > .ul > .li {
   display: list-item;
 }
-.card_body > .btn {
+.card_body > .button {
   display: block;
   width: 100%;
   color: #fff;
@@ -172,10 +172,10 @@ body {
   overflow: visible;
   transition: all 0.15s;
 }
-.card_body > .btn:hover {
+.card_body > .button:hover {
   cursor: pointer;
 }
-.card:first-child > .card_body > .btn {
+.card:first-child > .card_body > .button {
   color: #007bff;
   background-color: transparent;
   border: 1px solid #007bff;

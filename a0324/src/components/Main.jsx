@@ -44,7 +44,7 @@ const Main = () => {
       <div className="card_deck">
         {cardList.map((card, index) => (
           <Card
-            key={`${card.name}_${index}`}
+            key={`card_item_${index}`}
             {...card}
             handleUserNum={handleUserNum}
           />

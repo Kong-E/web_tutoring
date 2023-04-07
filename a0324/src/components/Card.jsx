@@ -21,7 +21,7 @@ const Card = ({ name, price, desc, btnDesc, handleUserNum }) => {
             <li className="li">Help center access</li>
           </ul>
           <button
-            className="btn"
+            className="button"
             name={name}
             onClick={handleUserNum}
             type="button"
