@@ -3,32 +3,39 @@ import Card from "./Card";
 import { useState } from "react";
 
 const Main = () => {
-  const [userNum, setUserNum] = useState({ Free: 10, Pro: 20, Enterprise: 30 });
+  const [userNumber, setuserNumber] = useState({
+    Free: 10,
+    Pro: 20,
+    Enterprise: 30,
+  });
 
   const cardList = [
     {
       name: "Free",
       price: 0,
-      desc: [userNum["Free"], 2, "Email support"],
+      desc: [userNumber["Free"], 2, "Email support"],
       btnDesc: "Sign up for free",
     },
     {
       name: "Pro",
       price: 15,
-      desc: [userNum["Pro"], 10, "Priority email"],
+      desc: [userNumber["Pro"], 10, "Priority email"],
       btnDesc: "Get started",
     },
     {
       name: "Enterprise",
       price: 30,
-      desc: [userNum["Enterprise"], 15, "Phone and email"],
+      desc: [userNumber["Enterprise"], 15, "Phone and email"],
       btnDesc: "Contact us",
     },
   ];
 
-  const handleUserNum = (e) => {
+  const handleuserNumber = (e) => {
     const find = e.target.name;
-    setUserNum({ ...userNum, [e.target.name]: userNum[find] + 1 });
+    setuserNumber(
+      (prev) =>
+        (prev = { ...userNumber, [e.target.name]: userNumber[find] + 1 })
+    );
   };
 
   return (
@@ -46,7 +53,7 @@ const Main = () => {
           <Card
             key={`card_item_${index}`}
             {...card}
-            handleUserNum={handleUserNum}
+            handleuserNumber={handleuserNumber}
           />
         ))}
       </div>

@@ -1,7 +1,7 @@
 import "../App.css";
 
-const Card = ({ name, price, desc, btnDesc, handleUserNum }) => {
-  const [userNum, storage, support] = desc;
+const Card = ({ name, price, desc, btnDesc, handleUserNumber }) => {
+  const [userNumber, storage, support] = desc;
 
   return (
     <>
@@ -15,7 +15,7 @@ const Card = ({ name, price, desc, btnDesc, handleUserNum }) => {
             <small className="text_muted"> / mo</small>
           </h1>
           <ul className="ul">
-            <li className="li">{userNum} users included</li>
+            <li className="li">{userNumber} users included</li>
             <li className="li">{storage} GB of storage</li>
             <li className="li">{support} support</li>
             <li className="li">Help center access</li>
@@ -23,7 +23,7 @@ const Card = ({ name, price, desc, btnDesc, handleUserNum }) => {
           <button
             className="button"
             name={name}
-            onClick={handleUserNum}
+            onClick={handleUserNumber}
             type="button"
           >
             {btnDesc}
