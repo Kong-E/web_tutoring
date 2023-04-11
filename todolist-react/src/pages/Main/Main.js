@@ -13,7 +13,10 @@ const Main = () => {
   const onSubmitTodo = (e) => {
     e.preventDefault();
     setTodo((prev) => (prev = ""));
-    setTodoListData((prev) => [...prev, { title: todo, done: false }]);
+    setTodoListData((prev) => [
+      ...prev,
+      { id: new Date(), title: todo, done: false },
+    ]);
   };
 
   // const onClickDelete = (id) => () => {
@@ -30,9 +33,10 @@ const Main = () => {
       />
       {todoListData.map((todoList, index) => (
         <TodoItem
-          {...todoList}
-          // onClickDelete={onClickDelete(index)}
           key={`todo_item_${index}`}
+          {...todoList}
+          setTodoListData={setTodoListData}
+          // onClickDelete={onClickDelete(index)}
         />
       ))}
     </div>
