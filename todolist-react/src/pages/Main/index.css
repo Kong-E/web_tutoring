@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "SpoqaHanSansNeo-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "SpoqaHanSansNeo-Regular";
+  box-sizing: border-box;
+  color: #475569;
+  font-weight: bold;
+}
+.main_root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e9ecef;
+}
+.todoList_wrapper {
+  background-color: #fff;
+  width: 350px;
+  height: 400px;
+  overflow-y: auto;
+  padding: 40px 35px;
+  border: 1px solid #e9ecef;
+  border-radius: 20px;
+  box-shadow: 0 0.5rem 1.2rem rgb(189 197 209 / 20%);
+}
+.todoList_container {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.todoList_container::-webkit-scrollbar {
+  width: 12px; /* 스크롤바의 너비 */
+}
+
+.todoList_container::-webkit-scrollbar-thumb {
+  background: #e2e8f0; /* 스크롤바의 색상 */
+  border-radius: 10px;
+}
+
+.todoList_container::-webkit-scrollbar-track {
+  background: transparent;
+}

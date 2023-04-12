@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TodoItem from "../../components/TodoItem";
 import Input from "../../components/Input";
+import "./index.css";
 
 const Main = () => {
   const [todo, setTodo] = useState("");
@@ -20,21 +21,25 @@ const Main = () => {
   };
 
   return (
-    <div>
+    <div className="main_root">
       <Input
         onChangeTodo={onChangeTodo}
         onSubmitTodo={onSubmitTodo}
         todo={todo}
       />
-      {todoListData.map((todoList, index) => (
-        <TodoItem
-          key={`todo_item_${index}`}
-          {...todoList}
-          setTodoListData={setTodoListData}
-          todoListData={todoListData}
-          // onClickDelete={onClickDelete(index)}
-        />
-      ))}
+      <div className="todoList_wrapper">
+        <div className="todoList_container">
+          {todoListData.map((todoList, index) => (
+            <TodoItem
+              key={`todo_item_${index}`}
+              {...todoList}
+              setTodoListData={setTodoListData}
+              todoListData={todoListData}
+              // onClickDelete={onClickDelete(index)}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

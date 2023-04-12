@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import "./index.css";
 
 const TodoItem = ({ id, title, setTodoListData, todoListData }) => {
   const [checked, setChecked] = useState(false);
@@ -14,9 +15,14 @@ const TodoItem = ({ id, title, setTodoListData, todoListData }) => {
     );
   };
 
+  const onClickEditing = (e) => {
+    e.preventDefault();
+    setEditing((prev) => !prev);
+  };
+
   const onChangeTitle = (e) => {
     const { value } = e.target;
-    setNewTitle((prev) => (prev = value));
+    setNewTitle(value);
   };
 
   const onSubmitEditing = (e) => {
@@ -33,6 +39,10 @@ const TodoItem = ({ id, title, setTodoListData, todoListData }) => {
     setTodoListData((prev) => prev.filter((todoData) => todoData.id !== id));
   };
 
+  useEffect(() => {
+    console.log(editing);
+  }, [editing]);
+
   return (
     <>
       {editing ? (
@@ -41,24 +51,29 @@ const TodoItem = ({ id, title, setTodoListData, todoListData }) => {
           <button type="submit">완료</button>
         </form>
       ) : (
-        <form>
-          <input
-            name="done"
-            type="checkbox"
-            checked={checked}
-            onChange={onChangeCheckbox}
-          />
-          <div
-            name="done"
+        <form className="todo_data">
+          <label
+            className="todo_title"
+            htmlFor={`check_box_${id}`}
             style={{
-              display: "inline-block",
               textDecoration: checked ? "line-through" : "none",
             }}
           >
+            <input
+              className="todo_done"
+              type="checkbox"
+              id={`check_box_${id}`}
+              checked={checked}
+              onChange={onChangeCheckbox}
+            />
             {title}
-          </div>
-          <button onClick={() => setEditing((prev) => !prev)}>수정</button>
-          <button onClick={onClickDelete}>삭제</button>
+          </label>
+          <button className="edit_button" onClick={onClickEditing}></button>
+          <button
+            className="delete_button"
+            type="button"
+            onClick={onClickDelete}
+          ></button>
         </form>
       )}
     </>
