@@ -10,7 +10,7 @@ const Input = ({ onSubmitTodo, onChangeTodo, todo }) => {
           value={todo}
           onChange={onChangeTodo}
           type="text"
-          placeholder="Todo"
+          placeholder="TODO"
         />
       </form>
     </div>

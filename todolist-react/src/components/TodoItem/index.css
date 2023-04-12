@@ -3,7 +3,7 @@
 }
 .todo_data {
   display: grid;
-  grid-template-columns: 1fr 20px 20px;
+  grid-template-columns: 1fr 22px 22px;
   padding: 5px;
 }
 .todo_done {
@@ -23,18 +23,20 @@
 .edit_button {
   background-color: transparent;
   border: none;
-  background-image: url("icon/pencil.png");
+  background-image: url("icon/edit.svg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 13px;
+  background-size: 22px;
   cursor: pointer;
+  padding: 0;
 }
 .delete_button {
   background-color: transparent;
   border: none;
-  background-image: url("icon/delete.png");
+  background-image: url("icon/delete.svg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 13px;
+  background-size: 22px;
   cursor: pointer;
+  padding: 0;
 }

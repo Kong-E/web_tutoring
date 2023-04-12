@@ -9,7 +9,7 @@
 * {
   font-family: "SpoqaHanSansNeo-Regular";
   box-sizing: border-box;
-  color: #475569;
+  color: #1e293b;
   font-weight: bold;
 }
 .main_root {
@@ -18,7 +18,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #e9ecef;
+  background-color: #f8fafc;
 }
 .todoList_wrapper {
   background-color: #fff;
