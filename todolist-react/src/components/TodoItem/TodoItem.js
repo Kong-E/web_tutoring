@@ -1,20 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const TodoItem = ({ id, title, setTodoListData }) => {
-  // const [checked, setChecked] = useState(false);
+const TodoItem = ({ id, title, setTodoListData, todoListData }) => {
+  const [checked, setChecked] = useState(false);
   const [editing, setEditing] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
 
-  // const onClickCheckbox = () => {
-  //   setChecked((prev) => !prev);
-  // };
+  const onChangeCheckbox = () => {
+    setChecked((prev) => !prev);
+    setTodoListData((prev) =>
+      prev.map((todoData) =>
+        todoData.id === id ? { ...todoData, done: !todoData.done } : todoData
+      )
+    );
+  };
 
   const onChangeTitle = (e) => {
     const { value } = e.target;
     setNewTitle((prev) => (prev = value));
   };
 
-  const onSubmitEditing = () => {
+  const onSubmitEditing = (e) => {
+    e.preventDefault();
     setEditing((prev) => !prev);
     setTodoListData((prev) =>
       prev.map((todoData) =>
@@ -23,18 +29,41 @@ const TodoItem = ({ id, title, setTodoListData }) => {
     );
   };
 
+  const onClickDelete = () => {
+    setTodoListData((prev) => prev.filter((todoData) => todoData.id !== id));
+  };
+
+  useEffect(() => {
+    console.log(todoListData);
+  }, [todoListData]);
+
   return (
     <>
       {editing ? (
         <form onSubmit={onSubmitEditing}>
           <input value={newTitle} onChange={onChangeTitle} />
-          <button>완료</button>
+          <button type="submit">완료</button>
         </form>
       ) : (
-        <>
-          <li>{title}</li>
+        <form>
+          <input
+            name="done"
+            type="checkbox"
+            checked={checked}
+            onChange={onChangeCheckbox}
+          />
+          <div
+            name="done"
+            style={{
+              display: "inline-block",
+              textDecoration: checked ? "line-through" : "none",
+            }}
+          >
+            {title}
+          </div>
           <button onClick={() => setEditing((prev) => !prev)}>수정</button>
-        </>
+          <button onClick={onClickDelete}>삭제</button>
+        </form>
       )}
     </>
   );

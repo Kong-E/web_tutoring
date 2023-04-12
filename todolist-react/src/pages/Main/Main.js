@@ -15,14 +15,9 @@ const Main = () => {
     setTodo((prev) => (prev = ""));
     setTodoListData((prev) => [
       ...prev,
-      { id: new Date(), title: todo, done: false },
+      { id: Date.now(), title: todo, done: false },
     ]);
   };
-
-  // const onClickDelete = (id) => () => {
-  //   //filter함수사용
-  //   setTodoListData((prev) => prev.filter((value, index) => id !== index));
-  // };
 
   return (
     <div>
@@ -36,6 +31,7 @@ const Main = () => {
           key={`todo_item_${index}`}
           {...todoList}
           setTodoListData={setTodoListData}
+          todoListData={todoListData}
           // onClickDelete={onClickDelete(index)}
         />
       ))}
