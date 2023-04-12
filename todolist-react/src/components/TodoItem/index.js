@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const TodoItem = ({ id, title, setTodoListData, todoListData }) => {
   const [checked, setChecked] = useState(false);
@@ -32,10 +32,6 @@ const TodoItem = ({ id, title, setTodoListData, todoListData }) => {
   const onClickDelete = () => {
     setTodoListData((prev) => prev.filter((todoData) => todoData.id !== id));
   };
-
-  useEffect(() => {
-    console.log(todoListData);
-  }, [todoListData]);
 
   return (
     <>
