@@ -22,7 +22,7 @@ const TodoItem = ({ id, title, setTodoListData, todoListData }) => {
 
   const onChangeTitle = (e) => {
     const { value } = e.target;
-    setNewTitle(value);
+    setNewTitle((prev) => (prev = value));
   };
 
   const onSubmitEditing = (e) => {
