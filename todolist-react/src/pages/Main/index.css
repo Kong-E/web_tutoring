@@ -28,7 +28,7 @@
   padding: 40px 35px;
   border: 1px solid #e9ecef;
   border-radius: 20px;
-  box-shadow: 0 0.5rem 1.2rem rgb(189 197 209 / 20%);
+  box-shadow: 0 8px 20px rgb(189 197 209 / 40%);
 }
 .todoList_container {
   height: 100%;

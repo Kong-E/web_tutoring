@@ -46,9 +46,16 @@ const TodoItem = ({ id, title, setTodoListData, todoListData }) => {
   return (
     <>
       {editing ? (
-        <form onSubmit={onSubmitEditing}>
-          <input value={newTitle} onChange={onChangeTitle} />
-          <button type="submit">완료</button>
+        <form className="todo_data_editing" onSubmit={onSubmitEditing}>
+          <div></div>
+          <input
+            class="todo_new_title"
+            value={newTitle}
+            onChange={onChangeTitle}
+          />
+          <button className="edit_submit_button" type="submit">
+            Edit
+          </button>
         </form>
       ) : (
         <form className="todo_data">

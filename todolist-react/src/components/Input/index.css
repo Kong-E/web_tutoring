@@ -6,7 +6,7 @@
   padding: 10px 20px;
   border-radius: 20px;
   border: 1px solid #e9ecef;
-  box-shadow: 0 0.5rem 1.2rem rgb(189 197 209 / 20%);
+  box-shadow: 0 8px 20px rgb(189 197 209 / 40%);
   margin: 10px;
   font-size: 16px;
   text-align: center;
@@ -18,35 +18,30 @@
   text-align: center;
   font-weight: bold;
   color: #94a3b8;
-  font-size: 18px;
   letter-spacing: 1px;
 }
 .input::-moz-placeholder {
   text-align: center;
   font-weight: bold;
   color: #94a3b8;
-  font-size: 18px;
   letter-spacing: 1px;
 }
 .input:-ms-input-placeholder {
   text-align: center;
   font-weight: bold;
   color: #94a3b8;
-  font-size: 18px;
   letter-spacing: 1px;
 }
 .input:-moz-placeholder {
   text-align: center;
   font-weight: bold;
   color: #94a3b8;
-  font-size: 18px;
   letter-spacing: 1px;
 }
 .input::placeholder {
   text-align: center;
   font-weight: bold;
   color: #94a3b8;
-  font-size: 18px;
   letter-spacing: 1px;
 }
 .input:focus::-webkit-input-placeholder {
