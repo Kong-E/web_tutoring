@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./index.css";
 
-const TodoItem = ({ id, title, setTodoListData, todoListData }) => {
+const TodoItem = ({ id, title, setTodoListData }) => {
   const [checked, setChecked] = useState(false);
   const [editing, setEditing] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
@@ -15,7 +15,7 @@ const TodoItem = ({ id, title, setTodoListData, todoListData }) => {
     );
   };
 
-  const onClickEditing = (e) => {
+  const onClickEdit = (e) => {
     e.preventDefault();
     setEditing((prev) => !prev);
   };
@@ -25,7 +25,7 @@ const TodoItem = ({ id, title, setTodoListData, todoListData }) => {
     setNewTitle((prev) => (prev = value));
   };
 
-  const onSubmitEditing = (e) => {
+  const onSubmitEdit = (e) => {
     e.preventDefault();
     setEditing((prev) => !prev);
     setTodoListData((prev) =>
@@ -46,7 +46,7 @@ const TodoItem = ({ id, title, setTodoListData, todoListData }) => {
   return (
     <>
       {editing ? (
-        <form className="todo_data_editing" onSubmit={onSubmitEditing}>
+        <form className="todo_data_editing" onSubmit={onSubmitEdit}>
           <div></div>
           <input
             class="todo_new_title"
@@ -75,7 +75,7 @@ const TodoItem = ({ id, title, setTodoListData, todoListData }) => {
             />
             {title}
           </label>
-          <button className="edit_button" onClick={onClickEditing}></button>
+          <button className="edit_button" onClick={onClickEdit}></button>
           <button
             className="delete_button"
             type="button"
