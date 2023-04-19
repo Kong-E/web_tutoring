@@ -11,8 +11,7 @@ const Main = () => {
     setTodo((prev) => (prev = e.target.value));
   };
 
-  const onSubmitTodo = (e) => {
-    e.preventDefault();
+  const onSubmitTodo = () => {
     setTodo((prev) => (prev = ""));
     setTodoListData((prev) => [
       ...prev,
@@ -27,8 +26,8 @@ const Main = () => {
         onSubmitTodo={onSubmitTodo}
         todo={todo}
       />
-      <div className="todoList_wrapper">
-        <div className="todoList_container">
+      <div className="todo_list_wrapper">
+        <div className="todo_list_container">
           {todoListData.map((todoList, index) => (
             <TodoItem
               key={`todo_item_${index}`}
