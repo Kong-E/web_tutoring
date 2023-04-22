@@ -13,6 +13,7 @@ const Main = () => {
 
   const onSubmitTodo = () => {
     setTodo((prev) => (prev = ""));
+    if (todo === "") return;
     setTodoListData((prev) => [
       ...prev,
       { id: Date.now(), title: todo, done: false },
