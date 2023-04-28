@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./index.css";
 
-const TodoItem = ({ id, title, setTodoListData }) => {
-  const [checked, setChecked] = useState(false);
+const TodoItem = ({
+  id,
+  title,
+  done,
+  onChangeCheckbox,
+  onSubmitEdit,
+  onClickDelete,
+}) => {
   const [editing, setEditing] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
-
-  const onChangeCheckbox = () => {
-    setChecked((prev) => !prev);
-    setTodoListData((prev) =>
-      prev.map((todoData) =>
-        todoData.id === id ? { ...todoData, done: !todoData.done } : todoData
-      )
-    );
-  };
 
   const onClickEdit = (e) => {
     e.preventDefault();
@@ -25,33 +23,27 @@ const TodoItem = ({ id, title, setTodoListData }) => {
     setNewTitle((prev) => (prev = value));
   };
 
-  const onSubmitEdit = (e) => {
-    e.preventDefault();
-    setEditing((prev) => !prev);
-    setTodoListData((prev) =>
-      prev.map((todoData) =>
-        todoData.id === id ? { ...todoData, title: newTitle } : todoData
-      )
-    );
-  };
-
-  const onClickDelete = () => {
-    setTodoListData((prev) => prev.filter((todoData) => todoData.id !== id));
-  };
-
   useEffect(() => {
     console.log(editing);
-  }, [editing]);
+    console.log(done);
+  }, [editing, done]);
 
   return (
     <>
       {editing ? (
-        <form className="todo_data_editing" onSubmit={onSubmitEdit}>
+        <form
+          className="todo_data_editing"
+          onSubmit={(e) => {
+            e.preventDefault();
+            onSubmitEdit(id, newTitle);
+            setEditing((prev) => !prev);
+          }}
+        >
           <div></div>
           <input
-            class="todo_new_title"
+            className="todo_new_title"
             value={newTitle}
-            onChange={onChangeTitle}
+            onChange={() => onChangeTitle}
           />
           <button className="edit_submit_button" type="submit">
             Edit
@@ -59,27 +51,22 @@ const TodoItem = ({ id, title, setTodoListData }) => {
         </form>
       ) : (
         <form className="todo_data">
-          <label
-            className="todo_title"
-            htmlFor={`check_box_${id}`}
+          <input
+            className="todo_done"
+            type="checkbox"
+            id={`check_box_${id}`}
+            defaultChecked={done}
+            onChange={() => onChangeCheckbox(id)}
             style={{
-              textDecoration: checked ? "line-through" : "none",
+              textDecoration: done ? "line-through" : "none",
             }}
-          >
-            <input
-              className="todo_done"
-              type="checkbox"
-              id={`check_box_${id}`}
-              checked={checked}
-              onChange={onChangeCheckbox}
-            />
-            {title}
-          </label>
+          />
+          <Link to={`detail/${id}`}>{title}</Link>
           <button className="edit_button" onClick={onClickEdit}></button>
           <button
             className="delete_button"
             type="button"
-            onClick={onClickDelete}
+            onClick={() => onClickDelete(id)}
           ></button>
         </form>
       )}

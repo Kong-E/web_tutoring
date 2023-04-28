@@ -3,7 +3,7 @@
 }
 .todo_data {
   display: grid;
-  grid-template-columns: 1fr 22px 22px;
+  grid-template-columns: 22px 1fr 22px 22px;
   padding: 5px;
 }
 .todo_done {

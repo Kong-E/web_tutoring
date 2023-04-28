@@ -8,7 +8,7 @@ const Main = () => {
   const [todoListData, setTodoListData] = useState([]);
 
   const onChangeTodo = (e) => {
-    setTodo((prev) => (prev = e.target.value));
+    setTodo(e.target.value);
   };
 
   const onSubmitTodo = () => {
@@ -18,6 +18,27 @@ const Main = () => {
       ...prev,
       { id: Date.now(), title: todo, done: false },
     ]);
+  };
+
+  const onChangeCheckbox = (id) => {
+    setTodoListData((prev) =>
+      prev.map((todoData) =>
+        todoData.id === id ? { ...todoData, done: !todoData.done } : todoData
+      )
+    );
+  };
+
+  const onSubmitEdit = (id, newTitle) => {
+    console.log("edit");
+    setTodoListData((prev) =>
+      prev.map((todoData) =>
+        todoData.id === id ? { ...todoData, title: newTitle } : todoData
+      )
+    );
+  };
+
+  const onClickDelete = (id) => {
+    setTodoListData((prev) => prev.filter((todoData) => todoData.id !== id));
   };
 
   return (
@@ -33,9 +54,9 @@ const Main = () => {
             <TodoItem
               key={`todo_item_${index}`}
               {...todoList}
-              setTodoListData={setTodoListData}
-              todoListData={todoListData}
-              // onClickDelete={onClickDelete(index)}
+              onChangeCheckbox={onChangeCheckbox}
+              onSubmitEdit={onSubmitEdit}
+              onClickDelete={onClickDelete}
             />
           ))}
         </div>
