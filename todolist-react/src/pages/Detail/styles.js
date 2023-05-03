@@ -2,13 +2,16 @@ import styled from "styled-components";
 
 export const Root = styled.div`
   display: flex;
-  height: 100vw;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
 
 export const ItemCardRoot = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 300px;
   height: 200px;
   color: white;

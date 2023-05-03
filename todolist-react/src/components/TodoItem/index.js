@@ -19,14 +19,12 @@ const TodoItem = ({
   };
 
   const onChangeTitle = (e) => {
-    const { value } = e.target;
-    setNewTitle((prev) => (prev = value));
+    setNewTitle(e.target.value);
   };
-
-  useEffect(() => {
-    console.log(editing);
-    console.log(done);
-  }, [editing, done]);
+  // useEffect(() => {
+  //   console.log(editing);
+  //   console.log(done);
+  // }, [editing, done]);
 
   return (
     <>
@@ -43,7 +41,7 @@ const TodoItem = ({
           <input
             className="todo_new_title"
             value={newTitle}
-            onChange={() => onChangeTitle}
+            onChange={onChangeTitle}
           />
           <button className="edit_submit_button" type="submit">
             Edit
@@ -61,7 +59,14 @@ const TodoItem = ({
               textDecoration: done ? "line-through" : "none",
             }}
           />
-          <Link to={`detail/${id}`}>{title}</Link>
+          <Link
+            to={`detail/${id}`}
+            state={{
+              data: { id, title, done },
+            }}
+          >
+            {title}
+          </Link>
           <button className="edit_button" onClick={onClickEdit}></button>
           <button
             className="delete_button"
