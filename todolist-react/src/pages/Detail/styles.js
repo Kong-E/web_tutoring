@@ -8,7 +8,7 @@ export const Root = styled.div`
   justify-content: center;
 `;
 
-export const ItemCardRoot = styled.div`
+/* export const ItemCardRoot = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +25,7 @@ export const ItemCard = styled(ItemCardRoot)`
 
 export const ItemCard2 = styled(ItemCardRoot)`
   background-color: blue;
-`;
+`; */
 
 // 리드, 업데이트(타이틀 바꾸기), 딜리트(내 생각엔 딜리트 되면 리다이렉트), 토글, (콘텐트는 옵션)
 // RUD + 토글

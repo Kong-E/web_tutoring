@@ -1,11 +1,15 @@
 import Main from "./pages/Main";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Detail } from "./pages/Detail";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const App = () => {
   const [todo, setTodo] = useState("");
   const [todoListData, setTodoListData] = useState([]);
+
+  const saveTodoListData = () => {
+    localStorage.setItem("todos", JSON.stringify(todoListData));
+  };
 
   const onChangeTodo = (e) => {
     setTodo(e.target.value);
@@ -39,6 +43,18 @@ const App = () => {
     setTodoListData((prev) => prev.filter((todoData) => todoData.id !== id));
   };
 
+  const savedTodoListData = localStorage.getItem("todos");
+  useEffect(() => {
+    if (savedTodoListData !== null) {
+      const parsedToDos = JSON.parse(savedTodoListData);
+      setTodoListData(parsedToDos);
+    }
+  }, []);
+
+  useEffect(() => {
+    saveTodoListData();
+  }, [todoListData]);
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -56,7 +72,14 @@ const App = () => {
     },
     {
       path: "/detail/:id",
-      element: <Detail onChangeCheckbox={onChangeCheckbox} />,
+      element: (
+        <Detail
+          onChangeCheckbox={onChangeCheckbox}
+          onSubmitEdit={onSubmitEdit}
+          onClickDelete={onClickDelete}
+          savedTodoListData={savedTodoListData}
+        />
+      ),
     },
   ]);
 

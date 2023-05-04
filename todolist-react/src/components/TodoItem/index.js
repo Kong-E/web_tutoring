@@ -21,10 +21,10 @@ const TodoItem = ({
   const onChangeTitle = (e) => {
     setNewTitle(e.target.value);
   };
-  // useEffect(() => {
-  //   console.log(editing);
-  //   console.log(done);
-  // }, [editing, done]);
+  useEffect(() => {
+    // console.log(editing);
+    console.log(done);
+  }, [editing, done]);
 
   return (
     <>
@@ -49,24 +49,28 @@ const TodoItem = ({
         </form>
       ) : (
         <form className="todo_data">
-          <input
-            className="todo_done"
-            type="checkbox"
-            id={`check_box_${id}`}
-            defaultChecked={done}
-            onChange={() => onChangeCheckbox(id)}
+          <label
+            htmlFor={`check_box_${id}`}
             style={{
               textDecoration: done ? "line-through" : "none",
             }}
-          />
-          <Link
-            to={`detail/${id}`}
-            state={{
-              data: { id, title, done },
-            }}
           >
-            {title}
-          </Link>
+            <input
+              className="todo_done"
+              type="checkbox"
+              id={`check_box_${id}`}
+              defaultChecked={done}
+              onChange={() => onChangeCheckbox(id)}
+            />
+            <Link
+              to={`detail/${id}`}
+              state={{
+                data: { id, title, done },
+              }}
+            >
+              {title}
+            </Link>
+          </label>
           <button className="edit_button" onClick={onClickEdit}></button>
           <button
             className="delete_button"
