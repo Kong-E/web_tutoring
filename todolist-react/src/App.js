@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 const App = () => {
   const [todo, setTodo] = useState("");
   const [todoListData, setTodoListData] = useState([]);
+  const savedTodoListData = localStorage.getItem("todos");
 
   const saveTodoListData = () => {
     localStorage.setItem("todos", JSON.stringify(todoListData));
@@ -43,11 +44,10 @@ const App = () => {
     setTodoListData((prev) => prev.filter((todoData) => todoData.id !== id));
   };
 
-  const savedTodoListData = localStorage.getItem("todos");
   useEffect(() => {
     if (savedTodoListData !== null) {
-      const parsedToDos = JSON.parse(savedTodoListData);
-      setTodoListData(parsedToDos);
+      const parsedTodos = JSON.parse(savedTodoListData);
+      setTodoListData(parsedTodos);
     }
   }, []);
 
