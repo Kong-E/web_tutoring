@@ -22,7 +22,7 @@ export const Detail = ({ onChangeCheckbox, onSubmitEdit, onClickDelete }) => {
   return (
     <>
       <Root>
-        <Link to="/" style={{ marginBottom: "3px" }}>
+        <Link to="/">
           <button className="back_button" type="button"></button>
         </Link>
         {editing ? (
