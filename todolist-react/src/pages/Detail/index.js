@@ -1,4 +1,4 @@
-import { Root } from "./styles";
+import { Root, Form, EditForm } from "./styles";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -23,10 +23,10 @@ export const Detail = ({ onChangeCheckbox, onSubmitEdit, onClickDelete }) => {
     <>
       <Root>
         <Link to="/" style={{ marginBottom: "3px" }}>
-          Back
+          <button className="back_button" type="button"></button>
         </Link>
         {editing ? (
-          <form
+          <EditForm
             onSubmit={(e) => {
               e.preventDefault();
               onSubmitEdit(data.id, newTitle);
@@ -41,28 +41,30 @@ export const Detail = ({ onChangeCheckbox, onSubmitEdit, onClickDelete }) => {
             <button className="edit_submit_button" type="submit">
               Save
             </button>
-          </form>
+          </EditForm>
         ) : (
           <>
-            <label
-              htmlFor={`check_box_${data.id}`}
-              style={{
-                textDecoration: newDone ? "line-through" : "none",
-              }}
-            >
-              <input
-                className="todo_done"
-                type="checkbox"
-                id={`check_box_${data.id}`}
-                defaultChecked={newDone}
-                onChange={() => {
-                  onChangeCheckbox(data.id);
-                  setNewDone((prev) => !prev);
+            <Form>
+              <label
+                className="todo_done_label"
+                htmlFor={`check_box_${data.id}`}
+                style={{
+                  textDecoration: newDone ? "line-through" : "none",
+                  cursor: "pointer",
                 }}
-              />
-              {newTitle}
-            </label>
-            <div>
+              >
+                <input
+                  className="todo_done"
+                  type="checkbox"
+                  id={`check_box_${data.id}`}
+                  defaultChecked={newDone}
+                  onChange={() => {
+                    onChangeCheckbox(data.id);
+                    setNewDone((prev) => !prev);
+                  }}
+                />
+                {newTitle}
+              </label>
               <button
                 className="edit_button"
                 type="button"
@@ -76,7 +78,7 @@ export const Detail = ({ onChangeCheckbox, onSubmitEdit, onClickDelete }) => {
                   navigate("/");
                 }}
               ></button>
-            </div>
+            </Form>
           </>
         )}
       </Root>

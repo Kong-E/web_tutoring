@@ -5,7 +5,14 @@ export const Root = styled.div`
   height: 100vh;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+`;
+export const Form = styled.form`
+  display: grid;
+  grid-template-columns: 1fr 24px 24px;
+  align-content: center;
+`;
+export const EditForm = styled(Form)`
+  grid-template-columns: 1fr 40px;
 `;
 
 /* export const ItemCardRoot = styled.div`

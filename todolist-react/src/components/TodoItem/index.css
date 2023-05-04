@@ -4,21 +4,20 @@
 }
 .todo_data {
   display: grid;
-  grid-template-columns: 1fr 25px 25px;
-  padding: 4px;
+  grid-template-columns: 1fr 24px 24px 24px;
+  margin-bottom: 3px;
+  align-content: center;
 }
 .todo_done {
   border: 3px solid #e9ecef;
   border-radius: 5px;
   cursor: pointer;
   margin-right: 8px;
-  width: 13px;
-  height: 13px;
 }
 .todo_data_editing {
   display: grid;
-  grid-template-columns: 25px 1fr 50px;
-  padding: 5px;
+  grid-template-columns: 20px 1fr 50px;
+  margin: 2px 0 5.5px;
 }
 .todo_title {
   cursor: pointer;

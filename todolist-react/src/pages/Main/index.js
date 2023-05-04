@@ -18,7 +18,7 @@ const Main = ({
         onSubmitTodo={onSubmitTodo}
         todo={todo}
       />
-      <div className="todo_list_wrapper">
+      <div className="todo_list_root">
         <div className="todo_list_container">
           {todoListData.map((todoList, index) => (
             <TodoItem

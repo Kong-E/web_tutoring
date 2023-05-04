@@ -5,16 +5,16 @@
   font-weight: normal;
   font-style: normal;
 }
-.todo_data_editing {
-  display: grid;
-  grid-template-columns: 25px 1fr 50px;
-  padding: 5px;
+.todo_done_label {
+  padding-top: 2px;
+  padding-right: 5px;
 }
 .todo_new_title {
   border: none;
+  border-radius: 5px;
   font-size: 16px;
   background-color: #f1f5f9;
-  padding: 0 3px;
+  padding: 1px 5px;
   outline: none;
 }
 .edit_submit_button {
@@ -23,6 +23,7 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
 .edit_button {
   width: 25px;
   height: 25px;
@@ -46,4 +47,30 @@
   background-size: 22px;
   cursor: pointer;
   padding: 0;
+}
+.detail_button {
+  width: 22px;
+  height: 22px;
+  background-color: transparent;
+  border: none;
+  background-image: url("./assets/icon/detail.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 2px;
+  margin-left: 3px;
+}
+.back_button {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  background-image: url("./assets/icon/back.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 22px;
+  cursor: pointer;
+  padding-top: 100px;
 }

@@ -51,9 +51,11 @@ const TodoItem = ({
       ) : (
         <form className="todo_data">
           <label
+            className="todo_done_label"
             htmlFor={`check_box_${id}`}
             style={{
               textDecoration: done ? "line-through" : "none",
+              cursor: "pointer",
             }}
           >
             <input
@@ -63,14 +65,7 @@ const TodoItem = ({
               defaultChecked={done}
               onChange={() => onChangeCheckbox(id)}
             />
-            <Link
-              to={`detail/${id}`}
-              state={{
-                data: { id, title, done },
-              }}
-            >
-              {title}
-            </Link>
+            {title}
           </label>
           <button
             className="edit_button"
@@ -82,6 +77,14 @@ const TodoItem = ({
             type="button"
             onClick={() => onClickDelete(id)}
           ></button>
+          <Link
+            to={`detail/${id}`}
+            state={{
+              data: { id, title, done },
+            }}
+          >
+            <button className="detail_button" type="button"></button>
+          </Link>
         </form>
       )}
     </>

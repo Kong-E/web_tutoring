@@ -12,7 +12,7 @@
   height: 100vh;
   background-color: #f8fafc;
 }
-.todo_list_wrapper {
+.todo_list_root {
   background-color: #fff;
   width: 350px;
   height: 400px;
