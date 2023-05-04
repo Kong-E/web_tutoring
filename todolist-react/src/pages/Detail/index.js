@@ -1,6 +1,6 @@
 import { Root } from "./styles";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export const Detail = ({ onChangeCheckbox, onSubmitEdit, onClickDelete }) => {
   const navigate = useNavigate();
@@ -22,7 +22,9 @@ export const Detail = ({ onChangeCheckbox, onSubmitEdit, onClickDelete }) => {
   return (
     <>
       <Root>
-        <Link to="/">Back</Link>
+        <Link to="/" style={{ marginBottom: "3px" }}>
+          Back
+        </Link>
         {editing ? (
           <form
             onSubmit={(e) => {
@@ -31,8 +33,14 @@ export const Detail = ({ onChangeCheckbox, onSubmitEdit, onClickDelete }) => {
               setEditing(false);
             }}
           >
-            <input value={newTitle} onChange={onChangeTitle} />
-            <button type="submit">Save</button>
+            <input
+              className="todo_new_title"
+              value={newTitle}
+              onChange={onChangeTitle}
+            />
+            <button className="edit_submit_button" type="submit">
+              Save
+            </button>
           </form>
         ) : (
           <>
@@ -54,15 +62,21 @@ export const Detail = ({ onChangeCheckbox, onSubmitEdit, onClickDelete }) => {
               />
               {newTitle}
             </label>
-            <button onClick={onClickEdit}>Edit</button>
-            <button
-              onClick={() => {
-                onClickDelete(data.id);
-                navigate("/");
-              }}
-            >
-              Delete
-            </button>
+            <div>
+              <button
+                className="edit_button"
+                type="button"
+                onClick={onClickEdit}
+              ></button>
+              <button
+                className="delete_button"
+                type="button"
+                onClick={() => {
+                  onClickDelete(data.id);
+                  navigate("/");
+                }}
+              ></button>
+            </div>
           </>
         )}
       </Root>

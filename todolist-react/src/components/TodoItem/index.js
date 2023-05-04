@@ -21,6 +21,7 @@ const TodoItem = ({
   const onChangeTitle = (e) => {
     setNewTitle(e.target.value);
   };
+
   useEffect(() => {
     // console.log(editing);
     console.log(done);
@@ -44,7 +45,7 @@ const TodoItem = ({
             onChange={onChangeTitle}
           />
           <button className="edit_submit_button" type="submit">
-            Edit
+            Save
           </button>
         </form>
       ) : (
@@ -71,7 +72,11 @@ const TodoItem = ({
               {title}
             </Link>
           </label>
-          <button className="edit_button" onClick={onClickEdit}></button>
+          <button
+            className="edit_button"
+            type="button"
+            onClick={onClickEdit}
+          ></button>
           <button
             className="delete_button"
             type="button"

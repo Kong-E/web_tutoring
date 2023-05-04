@@ -1,4 +1,3 @@
-import { useState } from "react";
 import TodoItem from "../../components/TodoItem";
 import Input from "../../components/Input";
 import "./index.css";
