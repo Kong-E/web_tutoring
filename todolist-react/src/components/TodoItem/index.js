@@ -10,12 +10,12 @@ const TodoItem = ({
   onSubmitEdit,
   onClickDelete,
 }) => {
-  const [editing, setEditing] = useState(false);
+  const [edit, setEdit] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
 
   const onClickEdit = (e) => {
     e.preventDefault();
-    setEditing((prev) => !prev);
+    setEdit((prev) => !prev);
   };
 
   const onChangeTitle = (e) => {
@@ -23,19 +23,19 @@ const TodoItem = ({
   };
 
   useEffect(() => {
-    // console.log(editing);
+    // console.log(edit);
     console.log(done);
-  }, [editing, done]);
+  }, [edit, done]);
 
   return (
     <>
-      {editing ? (
+      {edit ? (
         <form
-          className="todo_data_editing"
+          className="todo_data_edit"
           onSubmit={(e) => {
             e.preventDefault();
             onSubmitEdit(id, newTitle);
-            setEditing((prev) => !prev);
+            setEdit((prev) => !prev);
           }}
         >
           <div></div>

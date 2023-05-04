@@ -6,13 +6,13 @@ export const Detail = ({ onChangeCheckbox, onSubmitEdit, onClickDelete }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { data } = location.state;
-  const [editing, setEditing] = useState(false);
+  const [edit, setEdit] = useState(false);
   const [newTitle, setNewTitle] = useState(data.title);
   const [newDone, setNewDone] = useState(data.done);
 
   const onClickEdit = (e) => {
     e.preventDefault();
-    setEditing((prev) => !prev);
+    setEdit((prev) => !prev);
   };
 
   const onChangeTitle = (e) => {
@@ -25,12 +25,12 @@ export const Detail = ({ onChangeCheckbox, onSubmitEdit, onClickDelete }) => {
         <Link to="/">
           <button className="back_button" type="button"></button>
         </Link>
-        {editing ? (
+        {edit ? (
           <EditForm
             onSubmit={(e) => {
               e.preventDefault();
               onSubmitEdit(data.id, newTitle);
-              setEditing(false);
+              setEdit(false);
             }}
           >
             <input
