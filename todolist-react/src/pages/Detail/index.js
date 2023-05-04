@@ -8,6 +8,7 @@ export const Detail = ({ onChangeCheckbox, onSubmitEdit, onClickDelete }) => {
   const { data } = location.state;
   const [editing, setEditing] = useState(false);
   const [newTitle, setNewTitle] = useState(data.title);
+  const [newDone, setNewDone] = useState(data.done);
 
   const onClickEdit = (e) => {
     e.preventDefault();
@@ -17,11 +18,6 @@ export const Detail = ({ onChangeCheckbox, onSubmitEdit, onClickDelete }) => {
   const onChangeTitle = (e) => {
     setNewTitle((prev) => (prev = e.target.value));
   };
-
-  // console.log(data);
-  useEffect(() => {
-    setNewTitle((prev) => (prev = data.title));
-  }, [data.title]);
 
   return (
     <>
@@ -43,17 +39,20 @@ export const Detail = ({ onChangeCheckbox, onSubmitEdit, onClickDelete }) => {
             <label
               htmlFor={`check_box_${data.id}`}
               style={{
-                textDecoration: data.done ? "line-through" : "none",
+                textDecoration: newDone ? "line-through" : "none",
               }}
             >
               <input
                 className="todo_done"
                 type="checkbox"
                 id={`check_box_${data.id}`}
-                defaultChecked={data.done}
-                onChange={() => onChangeCheckbox(data.id)}
+                defaultChecked={newDone}
+                onChange={() => {
+                  onChangeCheckbox(data.id);
+                  setNewDone((prev) => !prev);
+                }}
               />
-              {data.title}
+              {newTitle}
             </label>
             <button onClick={onClickEdit}>Edit</button>
             <button

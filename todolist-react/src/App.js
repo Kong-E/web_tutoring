@@ -77,7 +77,6 @@ const App = () => {
           onChangeCheckbox={onChangeCheckbox}
           onSubmitEdit={onSubmitEdit}
           onClickDelete={onClickDelete}
-          savedTodoListData={savedTodoListData}
         />
       ),
     },
