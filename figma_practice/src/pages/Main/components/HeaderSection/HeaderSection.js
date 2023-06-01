@@ -15,19 +15,17 @@ import menuIcon from "../../../../assets/icon/menu.png";
 
 export const HeaderSection = () => {
   return (
-    <>
-      <Container>
-        <IconBar>
-          <Icon src={facebookIcon} />
-          <Icon src={twitterIcon} />
-          <Icon src={LinkedInIcon} />
-          <Icon src={instagramIcon} />
-        </IconBar>
-        <NavBar>
-          <LogoImage src={logo} />
-          <MenuIcon src={menuIcon} />
-        </NavBar>
-      </Container>
-    </>
+    <Container>
+      <IconBar>
+        <Icon src={facebookIcon} />
+        <Icon src={twitterIcon} />
+        <Icon src={LinkedInIcon} />
+        <Icon src={instagramIcon} />
+      </IconBar>
+      <NavBar>
+        <LogoImage src={logo} />
+        <MenuIcon src={menuIcon} />
+      </NavBar>
+    </Container>
   );
 };

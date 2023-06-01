@@ -9,11 +9,15 @@ export const Root = styled.div`
 `;
 
 export const Container = styled(Root)`
+  position: relative;
   max-width: 1100px;
   margin: 0 auto;
 `;
 
 export const IconBar = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -30,6 +34,8 @@ export const Icon = styled.img`
 `;
 
 export const NavBar = styled.div`
+  position: absolute;
+  top: 50px;
   display: flex;
   align-items: center;
   align-self: flex-end;
@@ -42,7 +48,7 @@ export const LogoImage = styled.img`
 `;
 
 export const MenuIcon = styled.img`
-  width: 35px;
+  width: 40px;
   padding-bottom: 5px;
   object-fit: contain;
   cursor: pointer;

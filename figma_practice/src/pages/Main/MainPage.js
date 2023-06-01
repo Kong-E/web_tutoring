@@ -1,5 +1,6 @@
 import { ItemCard } from "../../components/ItemCard";
 import { HeaderSection } from "./components/HeaderSection";
+import { FooterSection } from "./components/FooterSection";
 import FullService from "../../assets/images/FullService.png";
 import ProgressBar from "../../assets/images/ProgressBar.png";
 import Email from "../../assets/images/Email.png";
@@ -81,6 +82,7 @@ export const MainPage = () => {
           <EmailImage src={Email} />
         </Container>
       </MainFullServiceSection>
+      <FooterSection />
     </Root>
   );
 };

@@ -14,7 +14,7 @@ export const Container = styled.div`
   align-items: center;
   /* justify-content: center; */
   flex-wrap: wrap;
-  max-width: 1100px;
+  width: 1100px;
   margin: 0 auto;
 `;
 
@@ -23,16 +23,14 @@ export const Container = styled.div`
 `; */
 
 export const MainSection = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
+  margin: 0;
+  padding: 0;
   width: 100%;
   min-height: 800px;
   background-image: url(${header});
   background-repeat: no-repeat;
   background-size: auto 800px;
   background-color: #ececec;
-  z-index: -1;
 `;
 
 export const TypoContainer = styled.div`
@@ -41,7 +39,7 @@ export const TypoContainer = styled.div`
   flex-direction: column;
   align-items: flex-end;
   align-self: flex-end;
-  padding: 270px 90px 0 0;
+  padding: 300px 100px 0 0;
 `;
 
 export const MainTypo = styled.div`
@@ -58,18 +56,14 @@ export const DescTypo = styled(MainTypo)`
   line-height: 1.6;
 `;
 
-export const MainOfferSection = styled(MainSection)`
-  top: 800px;
-  left: 0;
+export const MainOfferSection = styled.div`
   background-image: none;
   background-color: #fff;
   height: 1250px;
 `;
 
 export const MainFullServiceSection = styled.div`
-  position: absolute;
-  top: 2050px;
-  height: 800px;
+  height: 1100px;
 `;
 
 export const TitleSection = styled.div`
@@ -127,7 +121,9 @@ export const FullServiceProgress = styled.img`
 `;
 
 export const EmailImage = styled.img`
+  display: block;
   width: 100%;
+  height: 360px;
   transform: scale(1.07, 1.07);
   margin-top: 10px;
 `;
