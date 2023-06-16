@@ -1,0 +1,6 @@
+export const CONTAINER_MAX_WIDTH = 1100
+export const HEADER_HEIGHT = 80
+export const SMALL_CARD_WIDTH = 240
+export const DETAIL_PAGE_PROFILE_IMG_WIDTH = 300
+export const DETAIL_PAGE_PROFILE_IMG_HEIGHT = 300
+export const MOBILE_MAX_WIDTH = 800

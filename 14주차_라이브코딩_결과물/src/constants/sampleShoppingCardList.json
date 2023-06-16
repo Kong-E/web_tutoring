@@ -1,0 +1,36 @@
+{
+  "shopping_card_list": [
+    {
+      "key": 0,
+      "title": "멋진 가방",
+      "description": "엄청 멋져요",
+      "likeCount": 10,
+      "viewCount": 20,
+      "location": "https://shopping.naver.com/window/department/category?features=NEW_ARRIVAL&first=8621877396&switchTab=PRODUCT"
+    },
+    {
+      "key": 1,
+      "title": "멋진 신발",
+      "description": "엄청 멋져요",
+      "likeCount": 5,
+      "viewCount": 25,
+      "location": "https://shopping.naver.com/window-products/department/8643171985?NaPm=ct%3Dlie025da%7Cci%3Dshoppingwindow%7Ctr%3Dswl%7Chk%3Dc6f59f8b94df4befab10861c8e46dcbbea3feb81%7Ctrx%3D"
+    },
+    {
+      "key": 2,
+      "title": "멋진 옷",
+      "description": "짱짱 멋져요",
+      "likeCount": 0,
+      "viewCount": 40,
+      "location": "https://shopping.naver.com/window-products/department/8643170550?NaPm=ct%3Dlie02g5j%7Cci%3Dshoppingwindow%7Ctr%3Dswl%7Chk%3D9719de1e6c8d127691cdf39b421fe5801e603e41%7Ctrx%3D"
+    },
+    {
+      "key": 3,
+      "title": "멋진 모자",
+      "description": "엄청 멋져요",
+      "likeCount": 10,
+      "viewCount": 60,
+      "location": "https://shopping.naver.com/window-products/department/8643146345?NaPm=ct%3Dlie02oju%7Cci%3Dshoppingwindow%7Ctr%3Dswl%7Chk%3D8374bf9e6646fc79bb56309a87e1f9e9536a0f72%7Ctrx%3D"
+    }
+  ]
+}

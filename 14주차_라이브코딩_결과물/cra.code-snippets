@@ -1,0 +1,76 @@
+{
+  "react-function-component-skeleton": {
+    "scope": "typescriptreact",
+    "prefix": "rfc",
+    "body": [
+      "import { FC } from 'react'",
+      "import { Root } from './styled'",
+      "",
+      "type ${TM_FILENAME_BASE}$1Props = {",
+      "  className?: string",
+      "}",
+      "",
+      "export const ${TM_FILENAME_BASE}$1: FC<${TM_FILENAME_BASE}$1Props> = ({ className }) => {",
+      "  return <Root className={className}>${TM_FILENAME_BASE}$1</Root>",
+      "}",
+      ""
+    ]
+  },
+  "react-hook-skeleton": {
+    "scope": "typescript",
+    "prefix": "hook",
+    "body": [
+      "type ${TM_FILENAME_BASE}$1Props = {",
+      "",
+      "}",
+      "",
+      "export const ${TM_FILENAME_BASE}$1 = ({}: ${TM_FILENAME_BASE}$1Props) => {",
+      "  return {}",
+      "}",
+      ""
+    ]
+  },
+  "react-styled-components-skeleton": {
+    "scope": "typescript",
+    "prefix": "rsc",
+    "body": ["import styled from 'styled-components'", "", "export const Root = styled.div``"]
+  },
+  "react-post-axios": {
+    "scope": "typescript",
+    "prefix": "api-post",
+    "body": [
+      "import { axiosPOST } from 'api/common/commonAxios'",
+      "",
+      "export type ${TM_FILENAME_BASE/^(.)(.*)$/${1:/upcase}${2}/}$1RequestProps = {",
+      "",
+      "}",
+      "",
+      "export type ${TM_FILENAME_BASE/^(.)(.*)$/${1:/upcase}${2}/}$1ResponseProps = {",
+      "", 
+      "}",
+      "",
+      "export const ${TM_FILENAME_BASE}$1 = ({}: ${TM_FILENAME_BASE/^(.)(.*)$/${1:/upcase}${2}/}$1RequestProps) => {",
+      "  return axiosPOST('', {})",
+      "}"
+    ]
+  },
+  "react-get-axios": {
+    "scope": "typescript",
+    "prefix": "api-get",
+    "body": [
+      "import { axiosGET } from 'api/common/commonAxios'",
+      "",
+      "export type ${TM_FILENAME_BASE/^(.)(.*)$/${1:/upcase}${2}/}$1RequestProps = {",
+      "",
+      "}",
+      "",
+      "export type ${TM_FILENAME_BASE/^(.)(.*)$/${1:/upcase}${2}/}$1ResponseProps = {",
+      "", 
+      "}",
+      "",
+      "export const ${TM_FILENAME_BASE}$1 = ({}: ${TM_FILENAME_BASE/^(.)(.*)$/${1:/upcase}${2}/}$1RequestProps) => {",
+      "  return axiosGET('', {})",
+      "}"
+    ]
+  }
+}
